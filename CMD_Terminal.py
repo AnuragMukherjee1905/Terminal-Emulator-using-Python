@@ -138,7 +138,10 @@ root = tk.Tk()
 root.title("Mini Terminal")
 root.geometry("1000x600")
 
-icon = tk.PhotoImage(file="logo.png")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+icon_path = os.path.join(BASE_DIR, "logo.png")
+
+icon = tk.PhotoImage(file=icon_path)
 root.iconphoto(True, icon)
 
 terminal = ScrolledText(
