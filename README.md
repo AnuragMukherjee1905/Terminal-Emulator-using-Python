@@ -262,13 +262,6 @@ This project demonstrates practical understanding of:
 
 Compared to basic console applications, this project introduces significantly more advanced programming concepts and architectural thinking.
 
----
-
-#  Author
-
-Gintoki Sakata
-
----
 
 # 📄License
 
