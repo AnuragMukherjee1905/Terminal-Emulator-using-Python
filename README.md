@@ -1,6 +1,6 @@
-#  Mini Terminal Emulator
+# Mini Terminal Emulator
 
-A GUI-based terminal emulator built using **Python** and **Tkinter** that replicates core shell functionality such as command execution, directory navigation, file management, command history, and asynchronous processing using threading and queues.
+A GUI-based terminal emulator built using Python and Tkinter that replicates core shell functionality such as command execution, directory navigation, file management, command history, and asynchronous processing using threading and queues.
 
 This project was developed as a learning-focused implementation of:
 
@@ -11,9 +11,7 @@ This project was developed as a learning-focused implementation of:
 * filesystem interaction
 * scalable command registration systems
 
----
-
-#  Features
+# Features
 
 * Interactive terminal-style GUI
 * Custom command execution system
@@ -29,9 +27,7 @@ This project was developed as a learning-focused implementation of:
 * Custom application icon
 * Real-time prompt rendering
 
----
-
-#  Tech Stack
+# Tech Stack
 
 | Technology | Purpose                        |
 | ---------- | ------------------------------ |
@@ -42,22 +38,18 @@ This project was developed as a learning-focused implementation of:
 | JSON       | Persistent command history     |
 | OOP        | Project architecture           |
 
----
+# Project Structure
 
-#  Project Structure
-
-```text id="5jhm4l"
+```text id="5dujlwm"
 project/
 │
 ├── main.py
 ├── logo.png
-├── history.json
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
----
-
-#  Supported Commands
+# Supported Commands
 
 | Command        | Description                       |
 | -------------- | --------------------------------- |
@@ -71,11 +63,9 @@ project/
 | `help`         | Display available commands        |
 | `exit`         | Close the application             |
 
----
+# System Architecture
 
-#  System Architecture
-
-```text id="w0bc7d"
+```text id="cjlwm4"
 User Input
     ↓
 Tkinter Event Binding
@@ -91,11 +81,9 @@ Main GUI Thread
 Terminal Output Rendering
 ```
 
----
+# Core Concepts Implemented
 
-#  Core Concepts Implemented
-
-##  Object-Oriented Programming
+## Object-Oriented Programming
 
 The application is structured using modular classes such as:
 
@@ -108,15 +96,13 @@ This improves:
 * maintainability
 * code organization
 
----
-
-##  Decorator-Based Command Registration
+## Decorator-Based Command Registration
 
 Commands are dynamically registered using Python decorators.
 
 Example:
 
-```python id="4evgic"
+```python id="jlwm67"
 @registry.register("pwd")
 def cmd_pwd(args):
     return os.getcwd()
@@ -124,13 +110,11 @@ def cmd_pwd(args):
 
 This avoids large `if-elif` chains and enables scalable command addition.
 
----
-
-##  Multi-Threading
+## Multi-Threading
 
 Commands execute in separate worker threads to prevent GUI freezing.
 
-```python id="hz5t1m"
+```python id="jlwm68"
 threading.Thread(
     target=run_command,
     args=(command,),
@@ -140,36 +124,30 @@ threading.Thread(
 
 This ensures the interface remains responsive during command execution.
 
----
-
-##  Thread-Safe Queue Communication
+## Thread-Safe Queue Communication
 
 The project uses a queue for safe communication between:
 
 * worker threads
 * main GUI thread
 
-```python id="kwyjlwm"
+```python id="jlwm69"
 output_queue.put(output)
 ```
 
 This follows a producer-consumer architecture commonly used in real-world software systems.
 
----
-
-##  Persistent Command History
+## Persistent Command History
 
 Command history is stored using JSON.
 
-```python id="jlwmrx"
+```python id="jlwm70"
 json.dump(self.history, f, indent=2)
 ```
 
 History remains available even after restarting the application.
 
----
-
-#  GUI Features
+# GUI Features
 
 * Dark terminal-inspired interface
 * Scrollable output window
@@ -179,9 +157,7 @@ History remains available even after restarting the application.
 * Custom window icon
 * Responsive resizing behavior
 
----
-
-# ⌨️ Keyboard Shortcuts
+# Keyboard Shortcuts
 
 | Key            | Action           |
 | -------------- | ---------------- |
@@ -189,35 +165,27 @@ History remains available even after restarting the application.
 | `↑ Up Arrow`   | Previous command |
 | `↓ Down Arrow` | Next command     |
 
----
-
-# 🚀 Installation & Usage
+# Installation & Usage
 
 ## Clone Repository
 
-```bash id="cavmvt"
+```bash id="jlwm71"
 git clone <your-repository-link>
 ```
 
----
-
 ## Navigate Into Project Folder
 
-```bash id="g5wfko"
+```bash id="jlwm72"
 cd <project-folder>
 ```
 
----
-
 ## Run Application
 
-```bash id="af6x6v"
+```bash id="jlwm73"
 python main.py
 ```
 
----
-
-#  Key Learning Outcomes
+# Key Learning Outcomes
 
 This project strengthened understanding of:
 
@@ -231,26 +199,7 @@ This project strengthened understanding of:
 * Tkinter event handling
 * scalable software architecture
 
----
-
-#  Future Improvements
-
-Potential future enhancements include:
-
-* command autocomplete
-* syntax highlighting
-* multi-tab terminal support
-* piping and redirection
-* customizable themes
-* command aliases
-* environment variables
-* integrated file explorer
-* shell scripting support
-* command suggestion system
-
----
-
-#  Why This Project Matters
+# Why This Project Matters
 
 This project demonstrates practical understanding of:
 
@@ -262,7 +211,6 @@ This project demonstrates practical understanding of:
 
 Compared to basic console applications, this project introduces significantly more advanced programming concepts and architectural thinking.
 
-
-# 📄License
+# License
 
 This project was created for educational and learning purposes.
